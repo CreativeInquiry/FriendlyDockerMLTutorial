@@ -16,7 +16,7 @@ Let's assume you stumbled upon the "DeepFill" paper [Generative Image Inpainting
 
 Fancy! You provide a mask and Deepfill is hallucinating the content which matches the context.
 
-The following sections are step by step instructions how to get DeepFill running in a docker container. The process should be fairly similar for other models and hence can be seen as a general approach to encapsulate the setup complexity which comes with state of the art ML models. 
+The following sections are step by step instructions how to get DeepFill running in a Docker container. The process should be fairly similar for other models and hence can be seen as a general approach to encapsulate the setup complexity which comes with state of the art ML models. 
 
 My hope is furthermore that dedicated Docker containers will make ML models a lot more shareable and accessible for a wider audience in Art & Design, to facilitate the very needed debate of wider implications of AI/ML.
 
@@ -70,9 +70,9 @@ docker version
 
 The output should be a long list with infos like "API version: 1.4" etc.
 
-### Install Nvidia CUDA driver
+### Install nVidia CUDA driver
 
-Install CUDA along with latest nvidia driver for you graphics card.
+Install CUDA along with latest nVidia driver for your graphics card.
 
 - Go to: https://developer.nvidia.com/cuda-downloads
 - Select Linux > x86_64 > Ubuntu
