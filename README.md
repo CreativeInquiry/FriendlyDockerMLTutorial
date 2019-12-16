@@ -12,7 +12,7 @@ This tutorial tries to jump in by showing you an approach to handle the ML softw
 
 Let's assume you stumbled upon the "DeepFill" paper [Generative Image Inpainting with Contextual Attention](https://arxiv.org/abs/1801.07892) and the corresponding Github repository [JiahuiYu/generative_inpainting](https://github.com/JiahuiYu/generative_inpainting). Here is a quick illustration on what DeepFill does:
 
-![deepfill-illustration](/Users/bene/Dropbox (Personal)/CMU/Docker ML Tutorial/deepfill-illustration.png)
+![deepfill-illustration](assets/deepfill-illustration.png)
 
 Fancy! You provide a mask and Deepfill is hallucinating the content which matches the context.
 
