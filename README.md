@@ -1,4 +1,4 @@
-# Run the ML Model Zoo in Docker – A friendly Tutorial for Artist and Designers
+# Get ML Stuff Running, Using Docker – A Friendly Tutorial for Artist and Designers
 
 By [@b-g](https://github.com/b-g) Benedikt Groß
 
