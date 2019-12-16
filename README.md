@@ -26,13 +26,13 @@ My hope is furthermore that dedicated Docker containers will make ML models a lo
 
 * [1. Prerequisite 🐧](#1-prerequisite-)
 
-* [2. Install Party: CUDA, Docker and nvidia-container-toolkit  💻](#2-install-party-cuda-docker-and-nvidia-container-toolkit-)
+* [2. Install Party: CUDA, Docker and nvidia-container-toolkit 💻](#2-install-party-cuda-docker-and-nvidia-container-toolkit-)
   
   + [Install Docker](#install-docker)
   + [Install Nvidia CUDA driver](#install-nvidia-cuda-driver)
   + [Install nvidia-container-toolkit](#install-nvidia-container-toolkit)
   
-* [3. Example: Getting DeepFill running in Docker 📦🏃](#3-example-getting-deepfill-running-in-docker-)
+* [3. Example: Getting DeepFill running in Docker 📦](#3-example-getting-deepfill-running-in-docker-)
   + [Requirements spotting](#requirements-spotting)
   + [Fork the DeepFill repository](#fork-the-deepfill-repository)
   + [Create a Dockerfile](#create-a-dockerfile)
@@ -55,7 +55,7 @@ You will need the following hard- and software setup to be able to run Docker wi
 - Nvidia drivers with version >= 361
 
 
-## 2. Install Party: CUDA, Docker and nvidia-container-toolkit  💻
+## 2. Install Party: CUDA, Docker and nvidia-container-toolkit 💻
 
 
 ### Install Docker
@@ -129,7 +129,7 @@ Yay 🎉🎉🎉 ! You can go on to finally run ML models in Docker on your mach
 
 _⚠️ Currently (December 2019) the nvidia-docker projects seems to be in an odd transition phase of supporting two slightly different ways of leveraging NVIDIA GPUs in docker containers. At the moment best practice seems to install the nvidia-container-toolkit and if needed the deprecated nvidia-docker. You can install both without running into conflicts. The install order doesn't matter as well. _
 
-## 3. Example: Getting DeepFill running in Docker 📦🏃
+## 3. Example: Getting DeepFill running in Docker 📦
 
 So let's have a look in DeepFill Github repository [JiahuiYu/generative_inpainting](https://github.com/JiahuiYu/generative_inpainting). The README.md is nice in the sense that it explains with a few images what DeepFill does, has references and even sections on requirements and how to run the demo. But you still won't be able to run it out of the box. Like other ML models DeepFill relies on very specific software dependencies. And as ML researchers are busy with their research, documenting software setups for a wider audience seem currently not to be a priority in those circles. The dream situation would be that there is already a `Dockerfile` (e.g. [Detectron2](https://github.com/facebookresearch/detectron2) is a notable exception), or at least a`requirements.txt` (used in Python to define dependencies). 
 
