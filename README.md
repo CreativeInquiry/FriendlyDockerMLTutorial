@@ -24,7 +24,26 @@ My hope is furthermore that dedicated Docker containers will make ML models a lo
 
 ## 0. TOC
 
-[TOC]
+* [1. Prerequisite 🐧](#1-prerequisite---)
+
+* [2. Install Party: CUDA, Docker and nvidia-container-toolkit  💻](#2-install-party--cuda--docker-and-nvidia-container-toolkit----)
+  
+  + [Install Docker](#install-docker)
+  + [Install Nvidia CUDA driver](#install-nvidia-cuda-driver)
+  + [Install nvidia-container-toolkit](#install-nvidia-container-toolkit)
+  
+* [3. Example: Getting DeepFill running in Docker 📦🏃](#3-example--getting-deepfill-running-in-docker-----)
+  + [Requirements spotting](#requirements-spotting)
+  + [Fork the DeepFill repository](#fork-the-deepfill-repository)
+  + [Create a Dockerfile](#create-a-dockerfile)
+  + [Build the DeepFill container](#build-the-deepfill-container)
+  + [Run the DeepFill container](#run-the-deepfill-container)
+  + [Download pretrained DeepFill models](#download-pretrained-deepfill-models)
+  + [Run the DeepFill demo in the container](#run-the-deepfill-demo-in-the-container)
+  
+* [4. Strategies for finding the requirements 🤯](#4-strategies-for-finding-the-requirements---)
+
+  
 
 
 ## 1. Prerequisite 🐧
