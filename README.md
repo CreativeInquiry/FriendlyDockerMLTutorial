@@ -251,7 +251,7 @@ Copy these two images the DeepFill repo folder:
 Paste the command below in the terminal of our running DeepFill container:
 
 ```bash
-python3 test.py --image input.png --mask mask.png --output output.png --checkpoint_dir model_logs/release_places2_256
+python3 test.py --image input.png --mask mask.png --output output.png --checkpoint_dir model_logs/release_places2_256_deepfill_v2/
 ```
 
 The terminal will return a lot of debugging infos ... don't bother. After a few seconds you should get this result:
