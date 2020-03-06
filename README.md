@@ -1,6 +1,8 @@
+![FriendlyDockerMLTutorial](https://user-images.githubusercontent.com/480224/76093011-9bc59c00-5fc0-11ea-9fe7-f60ebd3e1242.png)
+
 # Get ML Stuff Running, Using Docker – A Friendly Tutorial for Artist and Designers
 
-By [@b-g](https://github.com/b-g) Benedikt Groß
+Article by [@b-g](https://github.com/b-g) Benedikt Groß. Cover image: [OpenMoji](https://openmoji.org/), CC BY-SA 4.0.
 
 We find ourselves in an exciting technological moment. In the last few years, it seems magic started to happen in Artificial Intelligence “AI”. After a long AI winter, machine learning “ML” methods and techniques started to work. 
 
