@@ -2,7 +2,7 @@
 
 # Get ML Stuff Running, Using Docker – A Friendly Tutorial for Artist and Designers
 
-Article by [@b-g](https://github.com/b-g) Benedikt Groß. Cover image: [OpenMoji](https://openmoji.org/), CC BY-SA 4.0.
+By [@b-g](https://github.com/b-g) Benedikt Groß
 
 We find ourselves in an exciting technological moment. In the last few years, it seems magic started to happen in Artificial Intelligence “AI”. After a long AI winter, machine learning “ML” methods and techniques started to work. 
 
@@ -44,6 +44,8 @@ My hope is furthermore that dedicated Docker containers will make ML models a lo
   + [Run the DeepFill demo in the container](#run-the-deepfill-demo-in-the-container)
   
 * [4. Strategies for finding the requirements 🤯](#4-strategies-for-finding-the-requirements-)
+
+* [5. Acknowledgments 🙏](#5-acknowledgments-)
 
   
 
@@ -278,3 +280,10 @@ To be honest it can take quite a while to figure out the requirements. Yes it is
   - All available docker containers published by Nvidia can be found here: https://hub.docker.com/r/nvidia/cuda/
 - Google error message in combination with specfic tensorflow / cuda versions e.g. `FROM nvidia/cuda:10.0-cudnn7-runtime-ubuntu18.04` and then running the demo gave me `ImportError: libcublas.so.9.0: cannot open shared object file: No such file or directory`. After reading a few posts it turned out that this is a typical error which can be avoided using cuda 9.0.
 - If there is a requirements state e.g. tensorflow-gpu==1.7.0 but you still have problems e.g. `E tensorflow/stream_executor/cuda/cuda_dnn.cc:396] Loaded runtime CuDNN library: 7603 (compatibility version 7600) but source was compiled with 7005 (compatibility version 7000)` . Try to gently bump up or down the version. In the case of DeppFill using tensorflow-gpu==1.8.0 solved the issue.
+
+## 5. Acknowledgments 🙏
+
+- Article section around how to install Docker is based on the [Install nvidia-docker](https://github.com/opendatacam/opendatacam/blob/master/documentation/nvidia-docker/INSTALL_NVIDIADOCKER.md) guide from the [OpenDataCam](https://github.com/opendatacam/opendatacam) project
+- Cover image based on [OpenMojis](https://openmoji.org/) – the open-source emoji and icon project. License: CC BY-SA 4.0
+- DeepFill demo images are from the movie "Fast and Furious" (2019) ... and my silly experiments [Fast and the Furious without guys and cars](https://twitter.com/bndktgrs/status/1204425598510227463)
+
