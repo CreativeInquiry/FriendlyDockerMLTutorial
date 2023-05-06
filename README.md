@@ -56,7 +56,7 @@ You will need the following hard- and software setup to be able to run Docker wi
 
 - An Ubuntu computer/server with a Nvidia CUDA GPU
 - Docker Engine with version >= 19.03.0
-- Docker docker-compose with version >= 1.28.0
+- Docker Compose with version >= 1.28.0
 - Nvidia drivers with version >= 361
 
 
@@ -74,6 +74,18 @@ docker version
 ```
 
 The output should be a long list with infos like "API version: 1.4" etc.
+
+### Install Docker Compose
+
+Follow the official documentation: [https://docs.docker.com/compose/install/linux/](https://docs.docker.com/compose/install/linux/)
+
+Verify Docker Compose version:
+
+```bash
+docker compose version
+```
+
+The output should be similar to "Docker Compose version v2.9.0".
 
 ### Install nVidia CUDA driver
 
