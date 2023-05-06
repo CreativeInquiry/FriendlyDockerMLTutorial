@@ -271,10 +271,10 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              count: 2
+              count: 1
 ```
 
-This configuration file defines a service named `deepfill` that uses the `deepfill:v0` Docker image and leverages the nvidia runtime to utilize GPUs. The devices section maps 2 of the host's NVIDIA GPUs by using nvidia driver. This configuration file can also be useful to specify GPUs to specific services in the same compose.
+This configuration file defines a service named `deepfill` that uses the `deepfill:v0` Docker image and leverages the nvidia runtime to utilize GPUs. The devices section maps 1 of the host's NVIDIA GPUs by using nvidia driver. This configuration file can also be useful to specify GPUs to specific services in the same compose.
 
 After running `docker compose up -d`, you can enter the running container and start a bash session using the `docker compose exec` command. The following command can be used to enter the `deepfill` service container and start a bash session:
 
