@@ -251,6 +251,40 @@ docker run -it --runtime=nvidia --volume $(pwd)/:/shared --workdir /shared deepf
 
 - **deepfill:v0** run a docker container named deepfill with version v0
 
+### Run the DeepFill container (with Docker Compose)
+In a more complex scenario where you want to leverage GPUs to run your services, it can be useful to set up a Docker Compose configuration file. For example, you can create a `docker-compose.yml` file with the following content:
+
+```yaml
+version: "3"
+services:
+  deepfill:
+    image: deepfill:v0
+    runtime: nvidia
+    volumes:
+      - $(pwd)/:/shared
+    working_dir: /shared
+    tty: true
+    stdin_open: true
+    command: bash
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 2
+```
+
+This configuration file defines a service named `deepfill` that uses the `deepfill:v0` Docker image and leverages the nvidia runtime to utilize GPUs. The devices section maps 2 of the host's NVIDIA GPUs by using nvidia driver. This configuration file can also be useful to specify GPUs to specific services in the same compose.
+
+After running `docker compose up -d`, you can enter the running container and start a bash session using the `docker compose exec` command. The following command can be used to enter the `deepfill` service container and start a bash session:
+
+```bash
+docker compose exec deepfill bash
+```
+
+The container will continue to run in the background, and you can start another bash session using the same command if needed.
+
+
 ### Download pretrained DeepFill models
 
 Download the [pretrained models](https://github.com/JiahuiYu/generative_inpainting#pretrained-models) e.g. Places2 (places background) or CelebA-HQ (faces) and copy it to folder `model_logs`. The demo relies on it.
