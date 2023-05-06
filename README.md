@@ -55,7 +55,8 @@ My hope is furthermore that dedicated Docker containers will make ML models a lo
 You will need the following hard- and software setup to be able to run Docker with GPU support:
 
 - An Ubuntu computer/server with a Nvidia CUDA GPU
-- Docker with version >= 1.4
+- Docker Engine with version >= 19.03.0
+- Docker docker-compose with version >= 1.28.0
 - Nvidia drivers with version >= 361
 
 
