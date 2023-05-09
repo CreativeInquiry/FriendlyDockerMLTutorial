@@ -1,0 +1,17 @@
+version: "3"
+services:
+  deepfill:
+    image: deepfill:v0
+    runtime: nvidia
+    volumes:
+      - $(pwd)/:/shared
+    working_dir: /shared
+    tty: true
+    stdin_open: true
+    command: bash
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1

@@ -55,7 +55,8 @@ My hope is furthermore that dedicated Docker containers will make ML models a lo
 You will need the following hard- and software setup to be able to run Docker with GPU support:
 
 - An Ubuntu computer/server with a Nvidia CUDA GPU
-- Docker with version >= 1.4
+- Docker Engine with version >= 19.03.0
+- Docker Compose with version >= 1.28.0
 - Nvidia drivers with version >= 361
 
 
@@ -73,6 +74,18 @@ docker version
 ```
 
 The output should be a long list with infos like "API version: 1.4" etc.
+
+### Install Docker Compose
+
+Follow the official documentation: [https://docs.docker.com/compose/install/linux/](https://docs.docker.com/compose/install/linux/)
+
+Verify Docker Compose version:
+
+```bash
+docker compose version
+```
+
+The output should be similar to "Docker Compose version v2.9.0".
 
 ### Install nVidia CUDA driver
 
@@ -237,6 +250,40 @@ docker run -it --runtime=nvidia --volume $(pwd)/:/shared --workdir /shared deepf
 - **--volume** mount the current folder (the DeepFill repo) to folder /shared in the docker container filesystem. The folder is shared between the host and the docker container
 
 - **deepfill:v0** run a docker container named deepfill with version v0
+
+### Run the DeepFill container (with Docker Compose)
+In a more complex scenario where you want to leverage GPUs to run your services, it can be useful to set up a Docker Compose configuration file. For example, you can create a `docker-compose.yml` file with the following content:
+
+```yaml
+version: "3"
+services:
+  deepfill:
+    image: deepfill:v0
+    runtime: nvidia
+    volumes:
+      - $(pwd)/:/shared
+    working_dir: /shared
+    tty: true
+    stdin_open: true
+    command: bash
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+```
+
+This configuration file defines a service named `deepfill` that uses the `deepfill:v0` Docker image and leverages the nvidia runtime to utilize GPUs. The devices section maps 1 of the host's NVIDIA GPUs by using nvidia driver. This configuration file can also be useful to specify GPUs to specific services in the same compose.
+
+After running `docker compose up -d`, you can enter the running container and start a bash session using the `docker compose exec` command. The following command can be used to enter the `deepfill` service container and start a bash session:
+
+```bash
+docker compose exec deepfill bash
+```
+
+The container will continue to run in the background, and you can start another bash session using the same command if needed.
+
 
 ### Download pretrained DeepFill models
 
